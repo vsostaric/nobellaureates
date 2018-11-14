@@ -1,0 +1,47 @@
+<p-dialog header="Laureate" [visible]="display" (onHide)="closeDialog()" [width]="500">
+  <div class="ui-grid">
+    <div class="ui-grid-col-12">
+      <div class="ui-grid-row">
+        <h3 class="first">Name</h3>
+      </div>
+      <div class="ui-grid-row">
+        <input type="text" pInputText [readonly]="!updatable" [disabled]="!updatable" [(ngModel)]="laureate.name">
+      </div>
+      <div class="ui-grid-row">
+        <h3 class="first">Alias</h3>
+      </div>
+      <div class="ui-grid-row">
+        <input type="text" pInputText [readonly]="!updatable" [disabled]="!updatable" [(ngModel)]="laureate.alias">
+      </div>
+      <div class="ui-grid-row">
+        <h3 class="first">Field</h3>
+      </div>
+      <div class="ui-grid-row">
+        <p-dropdown [options]="fieldOptions" [readonly]="!updatable" [disabled]="!updatable"
+                    [autoDisplayFirst]="false" [required]="true"
+                    [(ngModel)]="laureate.field" [autoWidth]="false"></p-dropdown>
+      </div>
+      <div class="ui-grid-row">
+        <h3 class="first">Year</h3>
+      </div>
+      <div class="ui-grid-row">
+        <input type="text" pInputText [readonly]="true" [disabled]="true" pKeyFilter="int"
+               maxlength="4"
+               [(ngModel)]="laureate.year">
+      </div>
+      <div class="ui-grid-row" *ngIf="updatable">
+        <p-slider [(ngModel)]="laureate.year" [style]="{'width':'200px'}" [disabled]="false"
+                  [min]="firstYear" max="{{currentYear| date:'yyyy'}}"></p-slider>
+      </div>
+      <div class="ui-grid-row"><h3>Biography</h3></div>
+      <div class="ui-grid-row">
+        <textarea pInputTextarea [readonly]="!updatable" [disabled]="!updatable"
+                  [(ngModel)]="laureate.biography"></textarea>
+      </div>
+      <div class="ui-grid-row" *ngIf="updatable"><h3></h3></div>
+      <div class="ui-grid-row" *ngIf="updatable">
+        <p-button label="Save" (onClick)="saveLaureate(laureate)" icon="fa fa-floppy-o"></p-button>
+      </div>
+    </div>
+  </div>
+</p-dialog>

@@ -1,0 +1,24 @@
+<p-confirmDialog key="deleteConfirmation" appendTo="body"
+                 acceptLabel="Yes"
+                 rejectLabel="No"
+                 message="Are you sure you want to delete input?"
+                 header=""></p-confirmDialog>
+
+<p-button (onClick)="showCreateNewForm()" label="Add" icon="fa fa-plus"></p-button>
+<hr>
+<p-dataTable [value]="laureates" [rows]="10" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20]">
+  <p-column field="name" header="Name" [filter]="true" sortable="true"></p-column>
+  <p-column field="year" header="Year" [filter]="true" sortable="true"></p-column>
+  <p-column field="field.name" header="Field" [filter]="true" sortable="true"></p-column>
+  <p-column field="" header="">
+    <ng-template let-laureate="rowData" pTemplate="body">
+      <p-button label="Details" (onClick)="showDetails(laureate)"></p-button>
+      <p-button icon="fa fa-edit" label="Update" (onClick)="showUpdateForm(laureate)"></p-button>
+      <p-button icon="fa fa-trash" label="Delete" (onClick)="removeRow(laureate)"></p-button>
+    </ng-template>
+  </p-column>
+</p-dataTable>
+<app-laureate-details [updatable]="updatable" [display]="display" [(laureate)]="laureate"
+                      (laureateSaved)="laureateSaved($event)"
+                      (closeDialogEvent)="closeDialog()"></app-laureate-details>
+

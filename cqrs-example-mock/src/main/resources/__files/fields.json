@@ -1,0 +1,26 @@
+[
+  {
+    "id": 10,
+    "name": "Physics"
+  },
+  {
+    "id": 11,
+    "name": "Chemistry"
+  },
+  {
+    "id": 12,
+    "name": "Physiology or Medicine"
+  },
+  {
+    "id": 13,
+    "name": "Literature"
+  },
+  {
+    "id": 14,
+    "name": "Peace"
+  },
+  {
+    "id": 15,
+    "name": "Economics"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": 10,
+    "name": "Wilhelm Röntgen",
+    "alias": "",
+    "field": {
+      "id": 10,
+      "name": "Physics"
+    },
+    "year": 1901,
+    "biography": "Wilhelm Conrad Röntgen (27 March 1845 – 10 February 1923) was a German mechanical engineer and physicist, who, on 8 November 1895, produced and detected electromagnetic radiation in a wavelength range known as X-rays or Röntgen rays, an achievement that earned him the first Nobel Prize in Physics in 1901. In honour of his accomplishments, in 2004 the International Union of Pure and Applied Chemistry (IUPAC) named element 111, roentgenium, a radioactive element with multiple unstable isotopes, after him."
+  },
+  {
+    "id": 11,
+    "name": "Jacobus Henricus van 't Hoff",
+    "alias": "",
+    "field": {
+      "id": 11,
+      "name": "Chemistry"
+    },
+    "year": 1901,
+    "biography": "Jacobus Henricus van 't Hoff, Jr. (30 August 1852 – 1 March 1911) was a Dutch physical chemist. A highly influential theoretical chemist of his time, van 't Hoff was the first winner of the Nobel Prize in Chemistry. His pioneering work helped found the modern theory of chemical affinity, chemical equilibrium, chemical kinetics, and chemical thermodynamics. In his 1874 pamphlet Van 't Hoff formulated the theory of the tetrahedral carbon atom and laid the foundations of stereochemistry. In 1875, he predicted the correct structures of allenes and cumulenes as well as their axial chirality. He is also widely considered one of the founders of physical chemistry as the discipline is known today."
+  },
+  {
+    "id": 12,
+    "name": "Emil Adolf von Behring",
+    "alias": "",
+    "field": {
+      "id": 12,
+      "name": "Physiology or Medicine"
+    },
+    "year": 1901,
+    "biography": "Emil von Behring (Emil Adolf von Behring), born as Emil Adolf Behring (15 March 1854 – 31 March 1917), was a German physiologist who received the 1901 Nobel Prize in Physiology or Medicine, the first one awarded, for his discovery of a diphtheria antitoxin. He was widely known as a \"saviour of children,\" as diphtheria used to be a major cause of child death. He was honored with Prussian nobility in 1901, henceforth being known by the surname \"von Behring.\""
+  },
+  {
+    "id": 13,
+    "name": "Sully Prudhomme",
+    "alias": "",
+    "field": {
+      "id": 13,
+      "name": "Literature"
+    },
+    "year": 1901,
+    "biography": "René François Armand (Sully) Prudhomme (16 March 1839 – 6 September 1907) was a French poet and essayist. He was the first winner of the Nobel Prize in Literature in 1901."
+  },
+  {
+    "id": 14,
+    "name": "Henry Dunant;",
+    "alias": "",
+    "field": {
+      "id": 14,
+      "name": "Peace"
+    },
+    "year": 1901,
+    "biography": "Henry Dunant (8 May 1828 – 30 October 1910), also known as Henri Dunant, was a Swiss businessman and social activist, the founder of the Red Cross, and the first recipient of the Nobel Peace Prize. The 1864 Geneva Convention was based on Dunant's ideas. In 1901 he received the first Nobel Peace Prize together with Frédéric Passy, making Dunant the first Swiss Nobel laureate."
+  },
+  {
+    "id": 15,
+    "name": "Frédéric Passy",
+    "alias": "",
+    "field": {
+      "id": 14,
+      "name": "Peace"
+    },
+    "year": 1901,
+    "biography": "Frédéric Passy (May 20, 1822 – June 12, 1912) was a French economist and a joint winner (together with Henry Dunant) of the first Nobel Peace Prize awarded in 1901."
+  }
+]

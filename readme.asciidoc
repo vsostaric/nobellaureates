@@ -1,0 +1,72 @@
+= Nobel Laureates
+:backend_module_name:  backend
+:mock_module_name:  cqrs-example-mock
+:angular_module_name:  frontend
+:react_module_name:  frontend-react
+
+== Description
+A simple application written frontend framework exploration.
+It is an example of the setup, implementation and backend integration for several frameworks.
+The application is a simple list of nobel laureates with a CRUD interface for data manipulation.
+
+== Module Description
+* {backend_module_name}
+** A spring boot application which exposes a Rest API.
+It uses a relation database to hold a data model.
+The API it exposes is a simple CRUD interface to data.
+*** liquibase - generates a model schema and enters a small set of data.
+* {mock_module_name}
+** Exposes a mock Rest API.
+Used for quicker development of frontend code.
+*** The mock is created using WireMock.
+* {angular_module_name}
+** An Angular 5 UI which uses the backend REST API.
+* {react_module_name}
+** It's the same as {angular_module_name} module but uses ReactJS.
+
+== Data model
+image::doc/nobel_laurate_model.png[]
+
+== Build
+The application is build using Maven.
+For every specific framework a maven profile is created.
+For the angular app the profile is "angular" and for the react it's "react".
+The application should be build with a specific profile activated, depending what the build should hold.
+
+== Future improvements
+* Add another frontend framework, possible Express or VueJS.
+* Clean up backend, separate data access.
+
+== Run with centos
+Here I will use centos as a base image.
+
+==== Run Centos
+--------
+docker run -d centos
+--------
+This will create a docker image but it will soon exit.
+Docker images run until the last command completes.
+Trick: give it a command which will never end.
+--------
+docker run -d centos tail -f /dev/null
+--------
+==== Run Java in Centos image
+First start image interactively.
+--------
+docker exec -it //container_name// bash
+--------
+Now you're running a bash inside the centos image.
+
+See what's running:
+--------
+ps -ef
+--------
+Install Java:
+--------
+yum install java
+--------
+==== Build docker image via Dockerfile
+Open bash in directory where Dockerfile is and run
+--------
+docker build -t //image-tag// .
+--------

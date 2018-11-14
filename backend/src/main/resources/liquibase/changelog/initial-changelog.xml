@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="vsostaric" dbms="h2">
+        <createTable tableName="field">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(25)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="vsostaric" dbms="h2">
+
+        <insert
+                tableName="field">
+            <column name="id" value="10"/>
+            <column name="name" value="Physics"/>
+        </insert>
+        <insert
+                tableName="field">
+            <column name="id" value="11"/>
+            <column name="name" value="Chemistry"/>
+        </insert>
+        <insert
+                tableName="field">
+            <column name="id" value="12"/>
+            <column name="name" value="Physiology or Medicine"/>
+        </insert>
+        <insert
+                tableName="field">
+            <column name="id" value="13"/>
+            <column name="name" value="Literature"/>
+        </insert>
+        <insert
+                tableName="field">
+            <column name="id" value="14"/>
+            <column name="name" value="Peace"/>
+        </insert>
+        <insert
+                tableName="field">
+            <column name="id" value="15"/>
+            <column name="name" value="Economics"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="3" author="vsostaric" dbms="h2">
+        <createTable tableName="laureate">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(150)"/>
+            <column name="alias" type="varchar(150)"/>
+            <column name="field_id" type="bigint"/>
+            <column name="year" type="bigint"/>
+            <column name="short_biography" type="varchar(1000)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="4" author="vsostaric" dbms="h2">
+        <createSequence
+                incrementBy="1"
+                sequenceName="laureate_seq_id"
+                startValue="10"/>
+
+        <addForeignKeyConstraint baseColumnNames="field_id"
+                                 baseTableName="laureate"
+                                 constraintName="fk_laurate_field"
+                                 referencedColumnNames="id"
+                                 referencedTableName="field"/>
+
+    </changeSet>
+
+    <changeSet id="5" author="vsostaric" dbms="h2">
+        <insert
+                tableName="laureate">
+            <column name="id" valueComputed="laureate_seq_id.nextval"/>
+            <column name="name" value="Wilhelm Röntgen"/>
+            <column name="alias" value=""/>
+            <column name="field_id" value="10"/>
+            <column name="year" value="1901"/>
+            <column name="short_biography"
+                    value="Wilhelm Conrad Röntgen (27 March 1845 – 10 February 1923) was a German mechanical engineer and physicist, who, on 8 November 1895, produced and detected electromagnetic radiation in a wavelength range known as X-rays or Röntgen rays, an achievement that earned him the first Nobel Prize in Physics in 1901. In honour of his accomplishments, in 2004 the International Union of Pure and Applied Chemistry (IUPAC) named element 111, roentgenium, a radioactive element with multiple unstable isotopes, after him."/>
+        </insert>
+        <insert
+                tableName="laureate">
+            <column name="id" valueComputed="laureate_seq_id.nextval"/>
+            <column name="name" value="Jacobus Henricus van 't Hoff"/>
+            <column name="alias" value=""/>
+            <column name="field_id" value="11"/>
+            <column name="year" value="1901"/>
+            <column name="short_biography"
+                    value="Jacobus Henricus van 't Hoff, Jr. (30 August 1852 – 1 March 1911) was a Dutch physical chemist. A highly influential theoretical chemist of his time, van 't Hoff was the first winner of the Nobel Prize in Chemistry. His pioneering work helped found the modern theory of chemical affinity, chemical equilibrium, chemical kinetics, and chemical thermodynamics. In his 1874 pamphlet Van 't Hoff formulated the theory of the tetrahedral carbon atom and laid the foundations of stereochemistry. In 1875, he predicted the correct structures of allenes and cumulenes as well as their axial chirality. He is also widely considered one of the founders of physical chemistry as the discipline is known today."/>
+        </insert>
+        <insert
+                tableName="laureate">
+            <column name="id" valueComputed="laureate_seq_id.nextval"/>
+            <column name="name" value="Emil Adolf von Behring"/>
+            <column name="alias" value=""/>
+            <column name="field_id" value="12"/>
+            <column name="year" value="1901"/>
+            <column name="short_biography"
+                    value="Emil von Behring (Emil Adolf von Behring), born as Emil Adolf Behring (15 March 1854 – 31 March 1917), was a German physiologist who received the 1901 Nobel Prize in Physiology or Medicine, the first one awarded, for his discovery of a diphtheria antitoxin. He was widely known as a &quot;saviour of children,&quot; as diphtheria used to be a major cause of child death. He was honored with Prussian nobility in 1901, henceforth being known by the surname &quot;von Behring.&quot;"/>
+        </insert>
+        <insert
+                tableName="laureate">
+            <column name="id" valueComputed="laureate_seq_id.nextval"/>
+            <column name="name" value="Sully Prudhomme"/>
+            <column name="alias" value=""/>
+            <column name="field_id" value="13"/>
+            <column name="year" value="1901"/>
+            <column name="short_biography"
+                    value="René François Armand (Sully) Prudhomme (16 March 1839 – 6 September 1907) was a French poet and essayist. He was the first winner of the Nobel Prize in Literature in 1901."/>
+        </insert>
+        <insert
+                tableName="laureate">
+            <column name="id" valueComputed="laureate_seq_id.nextval"/>
+            <column name="name" value="Henry Dunant;"/>
+            <column name="alias" value=""/>
+            <column name="field_id" value="14"/>
+            <column name="year" value="1901"/>
+            <column name="short_biography"
+                    value="Henry Dunant (8 May 1828 – 30 October 1910), also known as Henri Dunant, was a Swiss businessman and social activist, the founder of the Red Cross, and the first recipient of the Nobel Peace Prize. The 1864 Geneva Convention was based on Dunant's ideas. In 1901 he received the first Nobel Peace Prize together with Frédéric Passy, making Dunant the first Swiss Nobel laureate."/>
+        </insert>
+        <insert
+                tableName="laureate">
+            <column name="id" valueComputed="laureate_seq_id.nextval"/>
+            <column name="name" value="Frédéric Passy"/>
+            <column name="alias" value=""/>
+            <column name="field_id" value="14"/>
+            <column name="year" value="1901"/>
+            <column name="short_biography" value="Frédéric Passy (May 20, 1822 – June 12, 1912) was a French economist and a joint winner (together with Henry Dunant) of the first Nobel Peace Prize awarded in 1901."/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
